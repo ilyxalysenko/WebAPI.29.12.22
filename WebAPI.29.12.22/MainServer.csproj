@@ -5,7 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <RootNamespace>WebAPI._29._12._22</RootNamespace>
+    <RootNamespace>MainServer</RootNamespace>
+    <AssemblyName>MainServer</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

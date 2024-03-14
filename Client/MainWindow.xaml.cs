@@ -69,7 +69,7 @@ namespace Client
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync("https://localhost:7131/Woman");
+                HttpResponseMessage response = await client.GetAsync("https://localhost:5000/Woman");
 
                 if (response.IsSuccessStatusCode)
                 {

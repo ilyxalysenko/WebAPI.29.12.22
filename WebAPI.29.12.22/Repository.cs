@@ -1,4 +1,5 @@
 ﻿using WebAPI._29._12._22.Models;
+using System.Data.SqlTypes;
 
 namespace WebAPI._29._12._22
 {
