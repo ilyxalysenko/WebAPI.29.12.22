@@ -3,26 +3,26 @@ using System.Collections.Generic;
 
 namespace Client.Models
 {
-    public class Woman : IFuck
+    public class Cat : ITailable
     {
-        public int Id { get; set; }
+        public ulong Id { get; set; }
         public string Name { get; set; }
-        public int Age { get; set; }
-        public bool GoldenRain { get; set; }
-        public bool Oral { get; set; }
-        public bool Classic {  get; set; }
-        public bool Anal { get; set; }
+        public byte Age { get; set; }
+        public bool PuppyDP { get; set; }
+        public bool AntiRabic { get; set; }
+        public bool Passport {  get; set; }
+        public string Description { get; set; }
         public byte[] Image { get; set; }
         public string ImgPath { get; set; }
 
         public override bool Equals(object obj)
         {
-            if (obj == null || !(obj is Woman))
+            if (obj == null || !(obj is Cat))
             {
                 return false;
             }
 
-            var otherWoman = (Woman)obj;
+            var otherWoman = (Cat)obj;
             return this.Id == otherWoman.Id;
         }
 

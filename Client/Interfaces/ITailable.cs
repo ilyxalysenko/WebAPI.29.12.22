@@ -2,7 +2,7 @@
 
 namespace Client.Interfaces
 {
-    public interface IFuck
+    public interface ITailable
     {
     }
 }

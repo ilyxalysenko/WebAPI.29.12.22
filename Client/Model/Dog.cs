@@ -1,6 +1,6 @@
-﻿using WebAPI._29._12._22.Interfaces;
+﻿using Client.Interfaces;
 
-namespace WebAPI._29._12._22.Models
+namespace Client.Models
 {
     public class Dog : ITailable
     {
@@ -21,8 +21,8 @@ namespace WebAPI._29._12._22.Models
                 return false;
             }
 
-            var otherDog = (Cat)obj;
-            return this.Id == otherDog.Id;
+            var otherWoman = (Cat)obj;
+            return this.Id == otherWoman.Id;
         }
 
         public override int GetHashCode()

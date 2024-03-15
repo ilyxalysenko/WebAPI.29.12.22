@@ -2,7 +2,7 @@
 
 namespace WebAPI._29._12._22.Models
 {
-    public class Dog : ITailable
+    public class Cat : ITailable
     {
         public ulong Id { get; set; }
         public string Name { get; set; }
@@ -21,8 +21,8 @@ namespace WebAPI._29._12._22.Models
                 return false;
             }
 
-            var otherDog = (Cat)obj;
-            return this.Id == otherDog.Id;
+            var otherCat = (Cat)obj;
+            return this.Id == otherCat.Id;
         }
 
         public override int GetHashCode()

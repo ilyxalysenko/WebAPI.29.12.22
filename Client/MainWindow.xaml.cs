@@ -31,8 +31,10 @@ namespace Client
 
     public partial class MainWindow : Window
     {
-        string docPath = "C:/Users/Илья/Documents/IdImage";
-        List<Woman> AllWomen = new List<Woman>();
+        string ImagePath = "C:/Users/Илья/Documents/IdImage";
+        string HostName = "https://localhost:5000/Woman";
+
+        List<Cat> Pets = new List<Cat>();
         public MainWindow()
         {
             InitializeComponent();
@@ -40,36 +42,34 @@ namespace Client
         }
         public void Refresh_Button(object sender, RoutedEventArgs e)
         {
-            
             GetDataAsync();
-            ReadAsWoman(tempContent);
-            for (int i = 0; i < AllWomen.Count; i++)
+            ReadAsPet(tempContent);
+            for (int i = 0; i < Pets.Count; i++)
             {
                 bool unique = true;
                 foreach (var item in WomenListBox.Items)
                 {
-                    if (AllWomen[i] == item)
+                    if (Pets[i] == item)
                     {
                         unique = false; break;
                     }
                 }
                 if (unique == true)
                 {
-                    AllWomen[i].ImgPath = System.IO.Path.Combine(docPath, $"{AllWomen[i].Id}.jpg");
-                    ImageConverter.WriteJpg(AllWomen[i].Image, AllWomen[i].ImgPath);
-                    WomenListBox.Items.Add(AllWomen[i]);
+                    Pets[i].ImgPath = System.IO.Path.Combine(ImagePath, $"{Pets[i].Id}.jpg");
+                    ImageConverter.WriteJpg(Pets[i].Image, Pets[i].ImgPath);
+                    WomenListBox.Items.Add(Pets[i]);
                 }
             }
         }
 
-        
         private async void GetDataAsync()
         {
             HttpClient client = new HttpClient();
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync("https://localhost:5000/Woman");
+                HttpResponseMessage response = await client.GetAsync(HostName);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -98,15 +98,15 @@ namespace Client
         }
         string tempContent;
 
-        public void ReadAsWoman(string jsonArray)
+        public void ReadAsPet(string jsonArray)
         {
-            List<Woman> womenList = JsonConvert.DeserializeObject<List<Woman>>(jsonArray);
+            List<Cat> womenList = JsonConvert.DeserializeObject<List<Cat>>(jsonArray);
             for (int i = 0; i < womenList.Count; i++)
             {
-                bool contains = AllWomen.Contains(womenList[i]);
+                bool contains = Pets.Contains(womenList[i]);
                 if (!contains)
                 {
-                    AllWomen.Add(womenList[i]);
+                    Pets.Add(womenList[i]);
                 }
             }
 
@@ -114,8 +114,7 @@ namespace Client
 
         private void Image_MouseMove(object sender, MouseEventArgs e)
         {
-            ImageBrush brush = new ImageBrush();
-            brush.Freeze();
+            this.AddText("Suka");
         }
     }
 }

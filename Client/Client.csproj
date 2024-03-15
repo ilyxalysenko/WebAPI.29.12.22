@@ -162,10 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Interfaces\IFuck.cs" />
+    <Compile Include="Interfaces\ITailable.cs" />
     <Compile Include="ImageConverter.cs" />
-    <Compile Include="Model\Man.cs" />
-    <Compile Include="Model\Woman.cs" />
+    <Compile Include="Model\Dog.cs" />
+    <Compile Include="Model\Cat.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
